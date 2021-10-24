@@ -1,0 +1,30 @@
+
+******************README***********************
+Sofia Kafritsa Georganta
+
+------Task A--------
+In order to generate the key, I implemented a function using the "Sieve of Eratothenes"
+to generate prime numbers. By rsa_keygen(), public and private key are generated according
+to the instructions.
+
+-----Task B-------
+In this task I implement void rsa_encrypt(char *input_file, char *output_file, char *key_file)
+according to the instructions on wikipedia.
+To calculate the encrypted text and implement the operation with the power, I also wrote the function
+size_t mod_pow(size_t , size_t , size_t ). The operation is the following:
+
+for (int i=0; i<exponent; i++){
+  result = (size_t)((result * base)%mod);
+}
+
+that equals to c=m^e mod n
+
+----Task C------
+Using the same method as above, I decrypt the encrypted text.
+
+----Task D------
+I used the given key files in order to encrypt and decrypt the texts. The files generated are:
+TUC2016030136_decrepted_priv.txt
+TUC2016030136_decrepted_pub.txt
+TUC2016030136_encrypted_priv.txt
+TUC2016030136_encrypted_pub.txt
