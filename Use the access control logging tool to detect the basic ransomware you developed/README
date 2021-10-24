@@ -1,0 +1,85 @@
+**********README***********
+Sofia Kafritsa Georganta    - GREEK
+Assignment 5
+***************************
+
+
+---------Diorthwseis apo Assignment 4 -----------------
+
+1) Sthn fopen, teleutaia stigmh xwris na to elegksw allaksa to ekshs:
+   
+   evala thn grammh "original_fopen_ret = (*original_fopen)(path, mode);"  PRIN apo ton elegxo " access(path,F_OK)==0 "
+   kai gi ayto to logo den emfanizetai sto logfile to creation me accessType=0. Par ola ayta o elegxos autos yphrxe kai sthn 
+   Assignment 4. 
+   Gia thn Assignment 5 to gyrisa sth thesi pou prepei na einai kai to creation me accessType=0 emfanizetai kanonika.
+
+2) Sto README ths Assignment 4 eixa valei anapoda ta apotelesmata apo tis parakatw ekteleseis:
+
+   ./acmonitor -m 	   
+   ./acmonitor -i <filename>   
+
+   Dhladh ta apotelesmata ths  "./acmonitor -m"  ta exw valei sthn "./acmonitor -i <filename>" kai to antistrofo. Oson afora omws thn ektelesh 
+   toy programmatos einai swsta ta zhtoumena. Dhladh to provlhma einai mono sto README. 
+
+
+----------- GIA TO RANSOMWARE -----------------------
+
+Sto ransomware yparxoun 4 epiloges:
+
+1) ./ransomware -d dir -n N
+ 
+    Dhmiourgoume N arithmo apo file ransom_N.txt ta opoia meta tha ginoun encrypted.
+    Sto dir vazoume to directory pou theloume na dhmiourghsoume ta files. Doulevei kai gia to current directory pou vriskontai 
+    kai ola ta ektelesima, kathws exw valei elegxous auta na mh ginoun pote encrypted.
+    Parallhla, to ransomware dhmiourgei epipleon N arxeia junk_N.junk, ta opoia ginontai mono created (kai oxi encrypted) gia na
+    prosomeiwsoun th  leitourgia tou.
+
+    NOTE: Gia th dhmiourgia twn arxeiwn, eftiaksa th synarthsh file_open.c, thn opoia ektelw mesa sto ransomware.sh,
+    wste na katagrafoun ta apotelesmata ths fopen sto logfile.
+    
+
+2) ./ransomware -e dir 
+
+    Sto dir vazoume to directory pou exoume dhmiourghsei ta arxeia pou theloume na ginoun encrypted.
+
+    NOTE 1: Ginontai encrypted OLA ta arxeia pou uparxoun sto directory (ektos apo ta ektelesima).
+    NOTE 2: Sto logger.c prosthesa thn fopen64, sthn opoia kalw thn custom fopen, wste na katagrafoun 
+    oi energeies ths openssl
+
+2) ./ransomware -p dir 
+
+    Sto dir vazoume to directory pou exoume dhmiourghsei ta encrypted arxeia pou theloume na ginoun decrypted.
+    NOTE: Ginontai decrypted ola ta .encrypt arxeia.
+
+4) ./ransomware -h
+
+    Help message
+
+
+----------- GIA TO ACMONITOR -----------------------
+
+Oi epiloges pou exoume synolika,mazi me tis nees epiloges (3,4), einai oi ekshs:
+
+1) ./acmonitor -m 	   
+2) ./acmonitor -i <filename>  
+3) ./acmonitor -v <number of files>
+4) ./acmonitor -e
+5) ./acmonitor -h
+
+
+------------  HOW TO RUN THIS PROGRAM --------------
+
+1) make
+2) make run 
+3) ./ransomware -d <dir> -n <number of files to be created> 
+4) ./ransomware -e <dir> 
+5) ./ransomware -p <dir> 
+6) ./acmonitor -m 	   
+7) ./acmonitor -i <filename>  
+8) ./acmonitor -v <number of files>
+9) ./acmonitor -e
+
+NOTE 1: To vhma 2 mporei na paraleifthei, kathws to ransomware dhmiourgei arxeia ta opoia meta ginontai encrypted (gia logous testing)
+An den paraleifthei, tote ta apotelesmata tha periexoun kai ta files pou exoun paraxthei apo thn test_aclog.c 
+NOTE 2: To ransomware.sh sthn askhsh auth trexetai apo ton root. 
+
