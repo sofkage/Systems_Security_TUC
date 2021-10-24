@@ -1,0 +1,38 @@
+***********README*****************
+
+Sofia Kafritsa Georganta
+
+
+-----------How to run this program----------------
+
+1) For live capture
+
+        ./monitor -i
+        < then you type the interface you want from the above list and press Enter>
+
+        To stop capturing, press Ctrl+C
+
+2) For offline file reading
+
+        ./monitor -r
+        < then you type the name of the file and press Enter>
+
+
+
+------------Retransmissions---------------------
+Answers:
+9) Can you tell if an incoming TCP packet is a retransmission? If yes, how? If not, why?
+
+    TCP packets contain information about the sequence number and acknowledgement number. By using
+    those numbers, there is an interaction between the sender and the receiver. On my code, I tried to 
+    implement the functionality of marking a packet as retransmitted, by creating the following three 
+    functions: check_retransmission(), add_transmission(), add_to_current_flow(). The idea is, that we should 
+    check if the sequence number, acknowledgement number etc are all in order on the same network flow.
+    However, that didn't work well, because more packets are marked as retransmitted as expected,
+    by cross-checking with Wireshark.
+
+10) Can you tell if an incoming UDP packet is a retransmission? If yes, how? If not, why? 
+ 
+    We cannot tell if a UDP packet is retransmitted, because this protocol does not support this functionality 
+    and all the information needed.
+
