@@ -1,0 +1,28 @@
+*****************README*************
+
+Sofia Kafritsa Georganta
+
+************************************
+
+
+- Ylopoihmena ta steps 1,2,3. 
+Sto test_aclog.c exw ftiaksei kapoia test ta opoia doulevoun opws
+tha thelame kai dhmiourgeitai to logfile me tis katallhles times.
+
+- Oson afora to uid, xrhsimopoihsa thn setresuid() kai to uid allakse gia th dedomenh diadikasia,
+alla den katafera na valw ton kainoyrio user na anagnwrizei ta files, par olo pou einai se fakelous
+accessible apo olous tous users thewrhtika. (px to logfile einai sto /tmp). To sygkekrimeno shmeio einai 
+se comments sthn test_aclog
+Otan evana ena neo uid hardcoded gia na elegksw to programma, doulepse opws eprepe.
+
+-Epomenws, to step 2 einai elegmeno gia polla uids alla oxi mesw ths test_aclog, kathws h test_aclog
+grafei xrhstes mono me getuid() (sth dikh mou periptwsh 1000).
+
+
+NOTE !!!: sthn acmonitor, sth main, grammh 278, allaksa to orisma toy getopt se "hmi" giati 
+          den mou douleve alliws
+
+Paradeigma gia na treksoume to programma:
+1) make kai LD_PRELOAD=./logger.so ./test_aclog
+2) ./acmonitor -m 	   --> me apotelesma: 1000 6, an to getuid()==1000 klp
+3) ./acmonitor -i file_0   --> me apotelesma: Found malicious user with uid: 1000
