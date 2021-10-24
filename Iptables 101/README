@@ -1,0 +1,17 @@
+**************README*****************
+Assignment 7
+Sofia Kafritsa Georganta
+*************************************
+
+
+Adblocker implemented according to the assignment. I tested my adblocker with two ways:
+When adblocker is on:
+
+    1) I tried to load some of the websites on the "blacklist", but they couldn't load.
+
+    2) I clicked on some websites that contain ads, but the ads didn't appear.
+
+However, there are some persistent ads, that the adblocker couldn't block.
+This happens because some websites contain adblocker detectors, which eventually bypass 
+my adblocker, or the rules that must be configured are more complicated and specialised
+than the ones we applied.
